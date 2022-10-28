@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: #eee;
+  box-sizing: border-box;
+}
+
+.table-container, h1 {
+  margin: 8px;
+}
+
+td, th {
+  padding: 8px;
+}
+
+body {
+  background-color: #333;
+}
+
+button {
+  background-color: #aaa;
+  color: #111;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.right {
+  margin-left: auto;
+}
+
+table {
+  width: 100%;
+}
+
+thead {
+  background-color: #111;
+  text-align: left;
+}
+
+thead th {
+  width: 20%;
+}
+
+td:last-child {
+  text-align: right;
+}
+
+td.read-status {
+  display: flex;
+}
+
+.read-status {
+  justify-content: space-between;
+}
+
+
+tr:nth-child(even) {
+  background-color: #222;
+}
+
+.form-container {
+  position: absolute;
+  z-index: 100;
+  padding: 16px;
+  background-color: #333;
+  top: 0;
+  right: 0;
+  height: 100vh;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 16px 0;
+}
+
+form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+input {
+  color: #111;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.background {
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hidden {
+  display: none;
+}

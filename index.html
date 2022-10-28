@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library</title>
+  <script src="/script.js" defer></script>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <h1>Library</h1>
+
+  <div class="table-container">
+    <button id="new-button" class="right">New Book</button>
+      <table>
+        <thead>
+          <tr>
+            <th>Author</th>
+            <th>Title</th>
+            <th>Number of pages</th>
+            <th>Read</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+  </div>
+
+  <div class="background hidden"></div>
+
+    <div class="form-container hidden">
+      <div class="container">
+        <h2>New Book</h2>
+        <button type="button" id="back-button">Close</button>
+      </div>
+      <form id="book-form">
+        <div>
+          <label for="author">Author</label>
+          <input type="text" name="author" id="author" required>
+        </div>
+        <div>
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title" required>
+        </div>
+        <div>
+          <label for="pages">Number of Pages</label>
+          <input type="tel" name="pages" id="pages" required>
+        </div>
+    
+        <fieldset>
+          <legend>Have you read the book?</legend>
+            <div>
+              <input type="radio" name="read" id="yes" value="Yes" required>
+              <label for="yes">Yes</label>
+            </div>
+            <div>
+              <input type="radio" name="read" id="no" value="No">
+              <label for="no">No</label>
+            </div>
+        </fieldset>
+        <button type="button" id="add-button">Add To Library</button>
+      </form>
+    </div>
+
+</body>
+</html>
