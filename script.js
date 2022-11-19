@@ -1,31 +1,12 @@
 let myLibrary = [];
 
-/*let myLibrary = [
-  {
-    "author": "Orwell",
-    "title": "1984",
-    "numOfPages": "450",
-    "read": "Yes"
-  },
-  {
-    "author": "Peterson",
-    "title": "12 Rules For Life",
-    "numOfPages": "600",
-    "read": "Yes"
-  },
-  {
-    "author": "Greene",
-    "title": "Mastery",
-    "numOfPages": "429",
-    "read": "Yes"
-  }
-];*/
-
-function Book(author, title, numOfPages, read) {
+class Book{
+  constructor(author, title, numOfPages, read) {
   this.author = author;
   this.title = title;
   this.numOfPages = numOfPages;
   this.read = read;
+  }
 }
 
 function addBookToLibrary(author, title, numOfPages, read) {
