@@ -92,6 +92,43 @@ function setButtons() {
   })
 }
 
+function validateForm() {
+  const author = document.getElementById('author');
+  const title = document.getElementById('title');
+  const numOfPages = document.getElementById('pages');
+  const readStatus = document.getElementsByName('read');
+
+  if (author.validity.valueMissing) {
+    author.setCustomValidity("Enter author name");
+    return author.reportValidity();
+  }
+
+  if (title.validity.valueMissing) {
+    title.setCustomValidity("Enter book title");
+    return title.reportValidity();
+  }
+  console.log(numOfPages.validity)
+  if (numOfPages.validity.valueMissing) {
+    numOfPages.setCustomValidity("Enter number of pages");
+    return numOfPages.reportValidity();
+  }
+  if (numOfPages.validity.patternMismatch) {
+    numOfPages.setCustomValidity("Value has to be a number");
+    return numOfPages.reportValidity();
+  }
+  if (numOfPages.validity.rangeUnderflow) {
+    numOfPages.setCustomValidity("Number of pages has to be at least 0");
+    return numOfPages.reportValidity();
+  }
+
+  if (!readStatus[0].checked && !readStatus[1].checked) {
+    readStatus[1].setCustomValidity("Select one");
+    return readStatus[1].reportValidity();
+  }
+
+  return true;
+}
+
 function getFormData() {
   let form = document.querySelector('form');
   let formData = new FormData(form);
@@ -107,8 +144,9 @@ function getFormData() {
 
 let addButton = document.querySelector('#add-button');
 
-addButton.addEventListener('click', () => {
-  getFormData();
+addButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  if (validateForm()) getFormData();
 });
 
 function toggleReadStatus(index) {
